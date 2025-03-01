@@ -107,13 +107,13 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-primary mr-2 mt-0.5" />
                 <span className="text-gray-600 dark:text-gray-300">
-                  123 Commerce St, New York, NY 10001
+                  123 Alameda St, Santiago, Chile
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-primary mr-2" />
                 <span className="text-gray-600 dark:text-gray-300">
-                  (555) 123-4567
+                  (+56) 9 4455 2084
                 </span>
               </li>
               <li className="flex items-center">
@@ -128,7 +128,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-200 dark:border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 dark:text-gray-300 text-sm">
-            © {new Date().getFullYear()} <span className="text-primary font-semibold">Modern</span><span className="text-secondary font-semibold">Shop</span>. All rights reserved.
+            © {new Date().getFullYear()} <span className="text-primary font-semibold">danipa</span><span className="text-secondary font-semibold">Bernales</span>. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
