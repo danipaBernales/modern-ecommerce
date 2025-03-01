@@ -1,13 +1,4 @@
-/*
-  # Improve Authentication Security Settings
-
-  1. Changes
-     - Set minimum password length to 8 characters
-     - Create a trigger to validate password strength
-     - Add review table security policies
-*/
-
--- Create reviews table if it doesn't exist yet
+-- Reviews table if it doesn't exist yet
 CREATE TABLE IF NOT EXISTS reviews (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   product_id uuid REFERENCES products NOT NULL,
@@ -20,7 +11,7 @@ CREATE TABLE IF NOT EXISTS reviews (
 -- Enable RLS on reviews table
 ALTER TABLE reviews ENABLE ROW LEVEL SECURITY;
 
--- Create policies for reviews
+-- Policies for reviews
 CREATE POLICY "Anyone can view reviews"
   ON reviews
   FOR SELECT
@@ -46,7 +37,7 @@ CREATE POLICY "Users can delete their own reviews"
   TO authenticated
   USING (auth.uid() = user_id);
 
--- Create a function to validate password strength
+-- Function to validate password strength
 CREATE OR REPLACE FUNCTION auth.validate_password_strength(password text)
 RETURNS boolean AS $$
 BEGIN
@@ -74,7 +65,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
--- Create a trigger function to enforce password strength
+-- Trigger function to enforce password strength
 CREATE OR REPLACE FUNCTION auth.enforce_password_strength()
 RETURNS trigger AS $$
 BEGIN
@@ -84,7 +75,3 @@ BEGIN
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
-
--- Note: In a real production environment, you would need to create a trigger on the auth.users table
--- However, in Supabase, direct modifications to the auth schema triggers are restricted
--- The password validation would typically be handled by Supabase's auth settings in the dashboard

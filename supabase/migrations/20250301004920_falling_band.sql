@@ -1,13 +1,4 @@
-/*
-  # Fix profiles table and authentication
-
-  1. Ensure profiles table has username column
-  2. Add unique constraint to username
-  3. Create function to generate unique usernames
-  4. Add trigger to create profile on user creation
-*/
-
--- First check if profiles table exists and has username column
+-- Check if profiles table exists and has username column
 DO $$ 
 BEGIN
   -- Add username column if it doesn't exist
@@ -69,14 +60,14 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Create a function to handle new user creation
+-- Function to handle new user creation
 CREATE OR REPLACE FUNCTION handle_new_user() 
 RETURNS TRIGGER AS $$
 DECLARE
   base_username TEXT;
   unique_username TEXT;
 BEGIN
-  -- Extract username from email (part before @)
+  -- Extract username from email
   base_username := SPLIT_PART(NEW.email, '@', 1);
   
   -- Generate a unique username

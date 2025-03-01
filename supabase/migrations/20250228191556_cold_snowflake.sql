@@ -1,14 +1,3 @@
-/*
-  # Fix reviews and profiles relationship
-
-  1. Changes
-     - Add foreign key relationship between reviews and profiles tables
-     - Update the reviews query in ProductDetail page to use user_id instead of profiles
-
-  2. Security
-     - Maintain existing RLS policies
-*/
-
 -- Add foreign key constraint to reviews table if it doesn't exist
 DO $$ 
 BEGIN

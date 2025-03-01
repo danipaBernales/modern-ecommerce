@@ -1,14 +1,4 @@
-/*
-  # Add username to profiles table
-
-  1. Changes
-    - Adds username column to profiles table if it exists
-    - Creates profiles table with username column if it doesn't exist
-    - Updates existing profiles to have a username based on email
-    - Makes username required and unique
-*/
-
--- First check if profiles table exists
+-- Check if profiles table exists
 DO $$ 
 BEGIN
   IF NOT EXISTS (
@@ -28,7 +18,7 @@ BEGIN
     -- Enable RLS on profiles
     ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
     
-    -- Create policy for profiles
+    -- Policy for profiles
     CREATE POLICY "Users can manage their own profile"
       ON profiles
       FOR ALL
@@ -54,7 +44,7 @@ BEGIN
     END IF;
   END IF;
   
-  -- Create a unique index on username (works whether we just created the table or added the column)
+  -- Create a unique index on username
   CREATE UNIQUE INDEX IF NOT EXISTS profiles_username_idx ON profiles(username);
 END $$;
 

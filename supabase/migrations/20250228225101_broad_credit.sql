@@ -1,13 +1,4 @@
-/*
-  # Cleanup Duplicate Migrations
-
-  This migration ensures that we have a clean database schema by:
-  1. Removing any duplicate product entries
-  2. Ensuring all tables have proper constraints
-  3. Verifying all relationships between tables
-*/
-
--- First, check if we have any duplicate products and clean them up
+-- Clean duplicate products if exists
 DO $$
 DECLARE
   r RECORD;
@@ -39,7 +30,7 @@ BEGIN
   END LOOP;
 END $$;
 
--- Make sure we have the unique constraint on products
+-- Ensure unique constraint on products
 DO $$ 
 BEGIN
   IF NOT EXISTS (

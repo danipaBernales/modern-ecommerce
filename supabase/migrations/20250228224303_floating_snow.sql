@@ -1,28 +1,4 @@
-/*
-  # Product Categories and Schema Improvements
-
-  1. New Tables
-    - `categories` - Dedicated table for product categories
-      - `id` (uuid, primary key)
-      - `name` (text, unique)
-      - `description` (text)
-      - `image_url` (text)
-      - `created_at` (timestamp)
-    - `product_images` - Multiple images per product
-      - `id` (uuid, primary key)
-      - `product_id` (uuid, foreign key)
-      - `image_url` (text)
-      - `is_primary` (boolean)
-      - `display_order` (integer)
-      - `created_at` (timestamp)
-
-  2. Schema Improvements
-    - Add foreign key from products to categories
-    - Add unique constraint to prevent duplicate product insertions
-    - Add indexes for improved query performance
-*/
-
--- Create categories table
+-- Categories table
 CREATE TABLE IF NOT EXISTS categories (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   name text UNIQUE NOT NULL,
@@ -34,14 +10,14 @@ CREATE TABLE IF NOT EXISTS categories (
 -- Enable RLS on categories
 ALTER TABLE categories ENABLE ROW LEVEL SECURITY;
 
--- Create policy for categories
+-- Policy for categories
 CREATE POLICY "Anyone can view categories"
   ON categories
   FOR SELECT
   TO public
   USING (true);
 
--- Create product_images table for multiple images per product
+-- Product_images table for multiple images per product
 CREATE TABLE IF NOT EXISTS product_images (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   product_id uuid REFERENCES products NOT NULL,
@@ -54,7 +30,7 @@ CREATE TABLE IF NOT EXISTS product_images (
 -- Enable RLS on product_images
 ALTER TABLE product_images ENABLE ROW LEVEL SECURITY;
 
--- Create policy for product_images
+-- Policy for product_images
 CREATE POLICY "Anyone can view product images"
   ON product_images
   FOR SELECT
@@ -67,8 +43,7 @@ CREATE INDEX IF NOT EXISTS idx_products_price ON products(price);
 CREATE INDEX IF NOT EXISTS idx_products_stock ON products(stock);
 CREATE INDEX IF NOT EXISTS idx_product_images_product_id ON product_images(product_id);
 
--- First, remove duplicate products to avoid constraint violation
--- This approach doesn't use MIN() on UUID which was causing the error
+-- Remove duplicate products to avoid constraint violation
 DO $$
 DECLARE
   r RECORD;
@@ -131,7 +106,7 @@ SET category_id = categories.id
 FROM categories
 WHERE products.category = categories.name;
 
--- Now it's safe to add the unique constraint
+-- Add the unique constraint
 ALTER TABLE products ADD CONSTRAINT unique_product_name_category UNIQUE (name, category);
 
 -- Migrate primary product images to product_images table
@@ -175,7 +150,7 @@ VALUES
    'https://images.unsplash.com/photo-1610824352934-c10d87b700cc', false, 2)
 ON CONFLICT DO NOTHING;
 
--- Create function to get all images for a product
+-- Get all images for a product
 CREATE OR REPLACE FUNCTION get_product_images(product_id uuid)
 RETURNS TABLE (
   image_url text,
@@ -198,7 +173,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Create a view for products with their category information
+-- View for products with their category information
 CREATE OR REPLACE VIEW product_details AS
 SELECT 
   p.id,

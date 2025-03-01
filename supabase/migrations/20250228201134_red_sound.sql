@@ -1,13 +1,3 @@
-/*
-  # Add more products
-
-  1. New Data
-    - Add 7 more products to the products table
-    - Includes products across different categories
-  2. Changes
-    - No schema changes, only data insertion
-*/
-
 -- Insert additional products
 INSERT INTO products (name, description, price, image_url, category, stock) VALUES
 ('Smart Watch Pro', 'Track your fitness and stay connected with this premium smartwatch featuring heart rate monitoring, GPS, and water resistance.', 199.99, 'https://images.unsplash.com/photo-1546868871-7041f2a55e12', 'Electronics', 35),
