@@ -222,7 +222,7 @@ export default function ProductsPage() {
             {/* Sort By */}
             <div>
               <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-                Sort By
+                Sort by
               </h3>
               <select
                 value={sortBy}

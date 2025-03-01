@@ -230,7 +230,7 @@ export default function ProductDetail() {
         <p className="text-gray-600 dark:text-gray-300">Product not found.</p>
         <Link to="/products" className="text-primary hover:underline mt-4 inline-block">
           <ArrowLeft className="inline mr-2 h-4 w-4" />
-          Back to Products
+          Back to products
         </Link>
       </div>
     );
@@ -240,7 +240,7 @@ export default function ProductDetail() {
     <div className="container py-10">
       <Link to="/products" className="text-primary hover:underline mb-6 inline-block link-hover">
         <ArrowLeft className="inline mr-2 h-4 w-4" />
-        Back to Products
+        Back to products
       </Link>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -286,9 +286,9 @@ export default function ProductDetail() {
             <p className="text-gray-700 dark:text-gray-300 mb-2">
               <span className="font-semibold">Availability:</span>{' '}
               {product.stock > 0 ? (
-                <span className="text-green-600 dark:text-green-400">In Stock ({product.stock} available)</span>
+                <span className="text-green-600 dark:text-green-400">In stock ({product.stock} available)</span>
               ) : (
-                <span className="text-red-600 dark:text-red-400">Out of Stock</span>
+                <span className="text-red-600 dark:text-red-400">Out of stock</span>
               )}
             </p>
           </div>

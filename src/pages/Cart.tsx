@@ -103,7 +103,7 @@ export default function Cart() {
             to="/products"
             className="inline-block px-6 py-2 bg-primary text-white rounded-md hover:bg-magenta-600 transition-colors btn-hover-scale btn-hover-shadow"
           >
-            Continue Shopping
+            Continue shopping
           </Link>
         </div>
       ) : (

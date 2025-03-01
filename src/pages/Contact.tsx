@@ -122,7 +122,7 @@ export default function Contact() {
         <div className="md:col-span-2">
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-              Send Us a Message
+              Send us a message
             </h2>
             
             {submitted ? (
@@ -133,7 +133,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  Message Sent Successfully!
+                  Message sent successfully!
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Thank you for contacting us. We've received your message and will respond within 24-48 hours.
@@ -145,7 +145,7 @@ export default function Contact() {
                   }}
                   className="px-6 py-2 bg-primary text-white rounded-md hover:bg-magenta-600 transition-colors"
                 >
-                  Send Another Message
+                  Send another message
                 </button>
               </div>
             ) : (
@@ -244,7 +244,7 @@ export default function Contact() {
       {/* Map */}
       <div className="mt-10 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-          Our Location
+          Our location
         </h2>
         <div className="h-96 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
           <iframe
