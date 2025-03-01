@@ -195,7 +195,7 @@ export default function Cart() {
               to="/products"
               className="w-full flex items-center justify-center bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white px-6 py-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors text-center btn-hover-shadow mb-4"
             >
-              Add More Products
+              Add more products
             </Link>
             <button
               onClick={checkout}
