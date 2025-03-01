@@ -9,7 +9,7 @@ export default tseslint.config(
     ignores: ['dist'],
   },
   {
-    // Files to lint: include JavaScript and TypeScript files
+    // Files to lint
     files: ['**/*.{ts,tsx,js,jsx}'],
 
     // Define parser options to support ECMAScript modules and JSX
@@ -38,7 +38,7 @@ export default tseslint.config(
       ...tseslint.configs.recommended,
     ],
 
-    // Automatically detect the React version
+    // Detect the React version
     settings: {
       react: {
         version: 'detect',
@@ -51,15 +51,13 @@ export default tseslint.config(
       'react-refresh': reactRefresh,
     },
 
-    // Combine recommended rules from react-hooks and react-refresh,
-    // and add any custom rules here
+    // Combine recommended rules from react-hooks and react-refresh
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
-      // Add your custom rules below:
       // "no-console": "warn",
       // "semi": ["error", "always"],
     },
