@@ -40,7 +40,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         return;
       }
       
-      // If we have a session, get the user
+      // If a session is running, get the user
       if (sessionData?.session) {
         const { data: userData } = await supabase.auth.getUser();
         set({ user: userData.user, loading: false });
@@ -67,6 +67,29 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         
       if (error) {
         console.error('Error fetching user profile:', error);
+        
+        // If the profile doesn't exist, create one
+        if (error.code === 'PGRST116') {
+          const { data: userData } = await supabase.auth.getUser();
+          if (userData.user) {
+            const username = userData.user.email?.split('@')[0] || 'user';
+            const { data: newProfile, error: createError } = await supabase
+              .from('profiles')
+              .insert({
+                id: userId,
+                username: username,
+                created_at: new Date().toISOString()
+              })
+              .select()
+              .single();
+              
+            if (createError) {
+              console.error('Error creating user profile:', createError);
+            } else if (newProfile) {
+              set({ profile: newProfile as UserProfile });
+            }
+          }
+        }
         return;
       }
       
@@ -98,7 +121,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
   signUp: async (email, password, username) => {
     try {
-      // First check if username is already taken
+      // Check if username is already taken
       const { data: existingUsers, error: checkError } = await supabase
         .from('profiles')
         .select('username')
@@ -129,10 +152,21 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       });
       
       if (!error && data?.user) {
-        // The profile will be created automatically by the database trigger
-        setTimeout(async () => {
-          await get().fetchUserProfile(data.user!.id);
-        }, 500);
+        // Create the profile manually to ensure it exists
+        const { error: profileError } = await supabase
+          .from('profiles')
+          .insert({
+            id: data.user.id,
+            username: username,
+            created_at: new Date().toISOString()
+          });
+          
+        if (profileError) {
+          console.error('Error creating profile:', profileError);
+        } else {
+          // Fetch the newly created profile
+          await get().fetchUserProfile(data.user.id);
+        }
         
         set({ 
           user: data.user,
