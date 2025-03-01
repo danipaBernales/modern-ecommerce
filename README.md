@@ -48,8 +48,8 @@ ModernShop is a modern, feature-rich e-commerce platform built with React, TypeS
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/modern-shop.git
-   cd modern-shop
+   git clone https://github.com/danipabernales/modern-ecommerce.git
+   cd modern-ecommerce
    ```
 
 2. Install dependencies:
@@ -84,6 +84,14 @@ ModernShop is a modern, feature-rich e-commerce platform built with React, TypeS
   main.tsx         # Application entry point
 /supabase
   /migrations      # Database migrations
+  /consolidated    # Consolidated migration for new environments
+/docs
+  DATABASE_SCHEMA.md  # Database schema documentation
+  MIGRATION_GUIDE.md  # Guide for managing migrations
+  MIGRATION_ISSUE.md  # Documentation of migration issues
+/scripts
+  check-migrations.js # Script to check for migration issues
+  deploy.js           # Script to deploy to Netlify
 ```
 
 ## Database Schema
@@ -97,6 +105,14 @@ The application uses the following main tables:
 - `orders`: Order information
 - `order_items`: Items within orders
 
+For detailed schema information, see [DATABASE_SCHEMA.md](docs/DATABASE_SCHEMA.md).
+
+## Migration Management
+
+This project uses Supabase migrations to manage the database schema. For information on how to work with migrations, see [MIGRATION_GUIDE.md](docs/MIGRATION_GUIDE.md).
+
+If you're setting up a new environment, you can use the consolidated migration in `supabase/migrations/consolidated/baseline.sql`.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -106,6 +122,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+For more details, see [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
 ## License
 
@@ -118,4 +136,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [Supabase](https://supabase.io/)
 - [Vite](https://vitejs.dev/)
 - [Lucide Icons](https://lucide.dev/)
-- [Unsplash](https://unsplash.com/) for the product images
+- [Unsplash](https://unsplash.com/) for the product imagess

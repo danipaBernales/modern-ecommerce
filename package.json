@@ -23,7 +23,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "check-migrations": "node scripts/check-migrations.js",
+    "deploy": "node scripts/deploy.js"
   },
   "dependencies": {
     "@supabase/auth-ui-react": "^0.4.7",

@@ -38,7 +38,7 @@ export default tseslint.config(
       ...tseslint.configs.recommended,
     ],
 
-    // Detect the React version
+    // Automatically detect the React version
     settings: {
       react: {
         version: 'detect',
@@ -51,7 +51,8 @@ export default tseslint.config(
       'react-refresh': reactRefresh,
     },
 
-    // Combine recommended rules from react-hooks and react-refresh
+    // Combine recommended rules from react-hooks and react-refresh,
+    // and add any custom rules here
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
