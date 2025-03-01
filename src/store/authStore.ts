@@ -130,7 +130,6 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       
       if (!error && data?.user) {
         // The profile will be created automatically by the database trigger
-        // We just need to wait a moment for it to be created
         setTimeout(async () => {
           await get().fetchUserProfile(data.user!.id);
         }, 500);
