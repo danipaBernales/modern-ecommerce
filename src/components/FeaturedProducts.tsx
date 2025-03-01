@@ -111,7 +111,7 @@ export default function FeaturedProducts() {
           to="/products"
           className="inline-block px-6 py-3 bg-primary text-white rounded-md hover:bg-magenta-600 transition-colors btn-hover-scale btn-hover-shadow"
         >
-          View All Products
+          View all products
         </Link>
       </div>
     </div>

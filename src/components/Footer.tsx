@@ -107,7 +107,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-primary mr-2 mt-0.5" />
                 <span className="text-gray-600 dark:text-gray-300">
-                  123 Alameda St, Santiago, Chile
+                  1234 Alameda St, Santiago, Chile
                 </span>
               </li>
               <li className="flex items-center">
