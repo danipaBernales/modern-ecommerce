@@ -27,7 +27,7 @@ export default function Newsletter() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Subscribe to Our Newsletter
+            Subscribe to our Newsletter
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
             Stay updated with the latest products, exclusive offers, and shopping tips.
