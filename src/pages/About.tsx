@@ -95,7 +95,7 @@ export default function About() {
               className="w-32 h-32 rounded-full object-cover mb-4"
             />
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Sarah Johnson
+              Clara Clark
             </h3>
             <p className="text-primary font-medium">Founder & CEO</p>
             <p className="text-gray-600 dark:text-gray-300 text-center mt-2">
@@ -110,7 +110,7 @@ export default function About() {
               className="w-32 h-32 rounded-full object-cover mb-4"
             />
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Michael Chen
+              Michael Mann
             </h3>
             <p className="text-primary font-medium">CTO</p>
             <p className="text-gray-600 dark:text-gray-300 text-center mt-2">
@@ -125,7 +125,7 @@ export default function About() {
               className="w-32 h-32 rounded-full object-cover mb-4"
             />
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Emma Rodriguez
+              Rara Rodriguez
             </h3>
             <p className="text-primary font-medium">Head of Customer Experience</p>
             <p className="text-gray-600 dark:text-gray-300 text-center mt-2">
