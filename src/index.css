@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+html {
+  @apply bg-background dark:bg-darkBackground text-text dark:text-textLight transition-colors duration-300;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Container utility override */
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Buttons */
+.btn {
+  @apply px-4 py-2 rounded-lg transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-magenta-600;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-gray-800 hover:bg-yellow-500;
+}
+
+/* Card shadow */
+.card {
+  @apply bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transition-all duration-300;
+}
+
+/* Modern accent borders */
+.accent-border {
+  @apply border-l-4 border-primary pl-4;
+}
+
+.accent-border-secondary {
+  @apply border-l-4 border-secondary pl-4;
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  @apply bg-gradient-to-r from-primary to-magenta-700;
+}
+
+.gradient-secondary {
+  @apply bg-gradient-to-r from-yellow-300 to-secondary;
+}
+
+/* Enhanced link hover effects */
+.link-hover {
+  @apply relative inline-block;
+}
+
+.link-hover::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-in-out;
+}
+
+.link-hover:hover::after {
+  @apply w-full;
+}
+
+/* Button hover effects */
+.btn-hover-scale {
+  @apply transform transition-transform duration-300 hover:scale-105;
+}
+
+.btn-hover-shadow {
+  @apply transition-shadow duration-300 hover:shadow-lg;
+}
