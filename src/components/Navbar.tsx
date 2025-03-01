@@ -40,7 +40,7 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
-  // Get display name (username if available, otherwise email)
+  // Get display name
   const displayName = profile?.username || user?.email?.split('@')[0] || 'User';
 
   return (
