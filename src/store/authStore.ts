@@ -40,7 +40,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         return;
       }
       
-      // If a session is running, get the user
+      // If we have a session, get the user
       if (sessionData?.session) {
         const { data: userData } = await supabase.auth.getUser();
         set({ user: userData.user, loading: false });
@@ -121,7 +121,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
   signUp: async (email, password, username) => {
     try {
-      // Check if username is already taken
+      // First check if username is already taken
       const { data: existingUsers, error: checkError } = await supabase
         .from('profiles')
         .select('username')
