@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
 import { useAuthStore } from '../store/authStore';
 import { Mail, Lock, LogIn, UserPlus, User as UserIcon } from 'lucide-react';
 
@@ -42,7 +41,7 @@ export default function Auth() {
           return;
         }
         
-        const { error, data } = await signUp(email, password, username);
+        const { error } = await signUp(email, password, username);
         if (error) {
           setAuthError(error.message);
         } else {

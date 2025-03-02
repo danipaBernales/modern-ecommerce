@@ -2,18 +2,6 @@
 
 This guide provides best practices for managing database migrations in the ModernShop project.
 
-## Current Migration Issues
-
-Our project currently has several migration files with overlapping or duplicate operations:
-
-1. **Duplicate content**: Some migration files contain identical SQL statements
-   - Example: `20250228201134_red_sound.sql` and `20250228201246_royal_lodge.sql` both insert the same products
-
-2. **Overlapping operations**: Multiple migrations modify the same tables in similar ways
-   - Example: Several migrations modify the `profiles` table to add or update the `username` column
-
-3. **Complex dependency chain**: Migrations build upon each other in ways that can be difficult to understand
-
 ## Best Practices for Future Migrations
 
 ### 1. Check Existing Schema First
