@@ -69,45 +69,49 @@ export default function Categories() {
       </h1>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <Link
             key={category.name}
             to={`/products?category=${category.name}`}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 btn-hover-shadow"
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-xl will-change-transform"
+            style={{
+              animationDelay: `${index * 100}ms`,
+              animation: 'fadeInUp 0.6s ease-out forwards'
+            }}
           >
-            <div className="relative h-48">
+            <div className="relative h-48 overflow-hidden">
               <img
                 src={category.image_url}
                 alt={category.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
               />
               {category.name === 'Electronics' && (
-                <div className="absolute inset-0 bg-yellow-400/30 flex items-center justify-center">
-                  <h2 className="text-2xl font-bold text-white">{category.name}</h2>
+                <div className="absolute inset-0 bg-yellow-400/30 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:backdrop-blur-md">
+                  <h2 className="text-2xl font-bold text-white transform transition-all duration-300 hover:scale-110">{category.name}</h2>
                 </div>
               )}
               {category.name === 'Home & Office' && (
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 flex items-center justify-center">
-                  <h2 className="text-2xl font-bold text-white">{category.name}</h2>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:backdrop-blur-md">
+                  <h2 className="text-2xl font-bold text-white transform transition-all duration-300 hover:scale-110">{category.name}</h2>
                 </div>
               )}
               {category.name === 'Accessories' && (
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-primary/10 flex items-center justify-center">
-                  <h2 className="text-2xl font-bold text-white">{category.name}</h2>
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-primary/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:backdrop-blur-md">
+                  <h2 className="text-2xl font-bold text-white transform transition-all duration-300 hover:scale-110">{category.name}</h2>
                 </div>
               )}
               {!['Electronics', 'Home & Office', 'Accessories'].includes(category.name) && (
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                  <h2 className="text-2xl font-bold text-white">{category.name}</h2>
+                <div className="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:backdrop-blur-md">
+                  <h2 className="text-2xl font-bold text-white transform transition-all duration-300 hover:scale-110">{category.name}</h2>
                 </div>
               )}
             </div>
-            <div className="p-4">
+            <div className="p-4 transform transition-all duration-300 hover:translate-x-2">
               <p className="text-gray-600 dark:text-gray-300">
                 {category.count} {category.count === 1 ? 'product' : 'products'}
               </p>
-              <p className="mt-2 text-primary hover:underline link-hover">
-                Browse Category
+              <p className="mt-2 text-primary group-hover:underline transition-all duration-300 ease-in-out transform hover:translate-x-1">
+                Browse Category →
               </p>
             </div>
           </Link>

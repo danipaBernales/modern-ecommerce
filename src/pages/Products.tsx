@@ -260,6 +260,10 @@ export default function ProductsPage() {
                   <ProductCard
                     product={product}
                     onAddToCart={addItem}
+                    onQuickView={(product) => {
+                      setQuickViewProduct(product);
+                      setIsQuickViewOpen(true);
+                    }}
                   />
                 </div>
               ))}

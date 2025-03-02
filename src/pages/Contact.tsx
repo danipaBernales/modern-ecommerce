@@ -221,7 +221,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-6 py-3 bg-primary text-white rounded-md hover:bg-magenta-600 transition-colors disabled:bg-gray-400 flex items-center"
+                  className="w-full px-6 py-3 bg-primary text-white rounded-md hover:bg-magenta-600 transition-colors disabled:bg-gray-400 flex items-center justify-center"
                 >
                   {loading ? (
                     <>
@@ -248,12 +248,13 @@ export default function Contact() {
         </h2>
         <div className="h-96 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1759728419793!2d-70.65577148788483!3d-33.44472159710934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a712492067%3A0xdf50ee85ca2194d1!2sAv.%20Alameda%20Libertador%20Bernardo%20O&#39;Higgins%201234%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1sen!2scl!4v1740933815984!5m2!1sen!2scl"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.176!2d-70.6557!3d-33.4447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a712492067%3A0xdf50ee85ca2194d1!2sAlameda%2C%20Santiago%2C%20Chile!5e0!3m2!1sen!2s!4v1709561234567!5m2!1sen!2s"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
             title="ModernShop Location"
           ></iframe>
         </div>

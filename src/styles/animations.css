@@ -1,0 +1,59 @@
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Smooth transitions for all interactive elements */
+  .transition-smooth {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Hover scale effect */
+  .hover-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Smooth shadow transition */
+  .hover-shadow {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  .hover-shadow:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Button press effect */
+  .btn-press {
+    transition: transform 0.2s ease-in-out;
+  }
+  .btn-press:active {
+    transform: scale(0.95);
+  }
+  
+  /* Smooth color transitions */
+  .color-transition {
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  /* Smooth border transitions */
+  .border-transition {
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  /* Smooth opacity transitions */
+  .opacity-transition {
+    transition: opacity 0.3s ease-in-out;
+  } 

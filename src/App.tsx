@@ -21,6 +21,7 @@ import Sitemap from './pages/Sitemap';
 import Categories from './pages/Categories';
 import Profile from './pages/Profile';
 import { supabase } from './lib/supabase';
+import './styles/animations.css';
 
 function App() {
   const { checkUser } = useAuthStore();
@@ -54,7 +55,7 @@ function App() {
       <Navbar />
 
       {/* Soft transitions */}
-      <main className="flex-grow container py-10">
+      <main className="flex-grow container py-10 animate-fadeInUp">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
