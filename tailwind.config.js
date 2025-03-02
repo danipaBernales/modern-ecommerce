@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#A21CAF', // Darker Magenta
-        secondary: '#FACC15', // Cool Yellow
+        primary: '#A21CAF',
+        secondary: '#FACC15',
         background: '#F8FAFC',
         darkBackground: '#1E293B',
         text: '#1E293B',
@@ -19,9 +19,9 @@ export default {
           200: '#F3A0EF',
           300: '#ED71E7',
           400: '#E741DF',
-          500: '#D946EF', // Original magenta
+          500: '#D946EF',
           600: '#C026D3',
-          700: '#A21CAF', // Primary darker magenta
+          700: '#A21CAF',
           800: '#86198F',
           900: '#701A75',
         },
@@ -30,7 +30,7 @@ export default {
           100: '#FEF9C3',
           200: '#FEF08A',
           300: '#FDE047',
-          400: '#FACC15', // Cool yellow
+          400: '#FACC15',
           500: '#EAB308',
           600: '#CA8A04',
           700: '#A16207',
