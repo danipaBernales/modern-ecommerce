@@ -38,7 +38,7 @@ export default function Contact() {
         <div className="md:col-span-1">
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 h-full">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-              Get In Touch
+              Get in Touch
             </h2>
             
             <div className="space-y-6">
@@ -49,9 +49,9 @@ export default function Contact() {
                     Our Location
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    123 Commerce St<br />
-                    New York, NY 10001<br />
-                    United States
+                    1234 Alameda St<br />
+                    Santiago<br />
+                    Chile
                   </p>
                 </div>
               </div>
@@ -63,8 +63,7 @@ export default function Contact() {
                     Phone
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Customer Service: (555) 123-4567<br />
-                    Support: (555) 987-6543
+                    Customer Service: (+56) 9 4455 2084<br />
                   </p>
                 </div>
               </div>
@@ -90,7 +89,7 @@ export default function Contact() {
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
                     Available Monday-Friday<br />
-                    9:00 AM - 6:00 PM EST
+                    9:00 AM - 6:00 PM
                   </p>
                 </div>
               </div>
