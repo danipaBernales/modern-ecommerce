@@ -46,7 +46,7 @@ export default function About() {
             Customer First
           </h3>
           <p className="text-gray-600 dark:text-gray-300">
-            We prioritize our customers' needs and feedback in everything we do, ensuring their satisfaction is our top priority.
+            We prioritize the needs of our customers and feedback in everything we do, ensuring their satisfaction is our top priority.
           </p>
         </div>
         

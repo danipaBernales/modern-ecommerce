@@ -41,7 +41,7 @@ export default function Auth() {
           return;
         }
         
-        const { error } = await signUp(email, password, username);
+        const { error, data } = await signUp(email, password, username);
         if (error) {
           setAuthError(error.message);
         } else {

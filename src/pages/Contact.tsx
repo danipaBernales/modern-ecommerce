@@ -63,7 +63,8 @@ export default function Contact() {
                     Phone
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Customer Service: (+56) 9 4455 2084<br />
+                    Customer Service:<br /> 
+                    (+56) 9 4455 2084
                   </p>
                 </div>
               </div>
@@ -75,8 +76,8 @@ export default function Contact() {
                     Email
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Customer Service: support@modernshop.com<br />
-                    General Inquiries: info@modernshop.com
+                    Customer Service:<br /> 
+                    support@modernshop.com
                   </p>
                 </div>
               </div>
@@ -88,7 +89,7 @@ export default function Contact() {
                     Live Chat
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Available Monday-Friday<br />
+                    Available Monday - Friday<br />
                     9:00 AM - 6:00 PM
                   </p>
                 </div>
@@ -247,7 +248,7 @@ export default function Contact() {
         </h2>
         <div className="h-96 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.0059418!3d40.7127847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s123%20Commerce%20St%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1759728419793!2d-70.65577148788483!3d-33.44472159710934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a712492067%3A0xdf50ee85ca2194d1!2sAv.%20Alameda%20Libertador%20Bernardo%20O&#39;Higgins%201234%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1sen!2scl!4v1740933815984!5m2!1sen!2scl"
             width="100%"
             height="100%"
             style={{ border: 0 }}
